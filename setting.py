@@ -1,8 +1,8 @@
 # Game settings
 
 TITLE = "               Damka       "
-WIDTH = 1300
-HEIGHT = 950
+WIDTH = 900
+HEIGHT = 900
 FPS = 12
 FONT_NAME = 'arial'
 
@@ -15,7 +15,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 
-
+block0 = [0, 0, 165, 115]
 
 """
 block0 = [0, 105, 135, 225]

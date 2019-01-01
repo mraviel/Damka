@@ -1,8 +1,13 @@
 import pygame as pg
 from setting import *
 import random
+from os import path
+
+# location of the img folder
+img_dir = path.join(path.dirname(__file__), 'img')
 
 class Game:
+
     def __init__(self):
         # initiallize game window, etc
         pg.init()
@@ -11,6 +16,9 @@ class Game:
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         self.running = True
+        self.gameBackgound = pg.image.load(path.join(img_dir, 'background1.png')).convert()
+        self.gameBackgound = pg.transform.scale(self.gameBackgound, (900, 900))
+        self.gameBackgound_rect = self.gameBackgound.get_rect()
 
     def new(self):
         # start a new game
@@ -42,28 +50,14 @@ class Game:
                 self.mx, self.my = pg.mouse.get_pos()
                 print (self.mx, self.my)
 
+                if (0 < self.mx) and (self.mx < 165) and (0 < self.my) and (self.my < 115):
+                    print("GGODD")
+
 
     def draw(self):
         # Game loop - draw
         self.screen.fill((43,123,21))
-        pg.draw.line(self.screen, BLACK, (0, HEIGHT / 8) , (WIDTH, HEIGHT / 8), 2)
-        pg.draw.line(self.screen, BLACK, (0, HEIGHT / 8 * 2) , (WIDTH, HEIGHT / 8 * 2), 2)
-        pg.draw.line(self.screen, BLACK, (0, HEIGHT / 8 * 3) , (WIDTH, HEIGHT / 8 * 3), 2)
-        pg.draw.line(self.screen, BLACK, (0, HEIGHT / 8 * 4) , (WIDTH, HEIGHT / 8 * 4), 2)
-        pg.draw.line(self.screen, BLACK, (0, HEIGHT / 8 * 5) , (WIDTH, HEIGHT / 8 * 5), 2)
-        pg.draw.line(self.screen, BLACK, (0, HEIGHT / 8 * 6) , (WIDTH, HEIGHT / 8 * 6), 2)
-        pg.draw.line(self.screen, BLACK, (0, HEIGHT / 8 * 7) , (WIDTH, HEIGHT / 8 * 7), 2)
-
-        pg.draw.line(self.screen, BLACK, (WIDTH / 8, 0) , (WIDTH / 8, HEIGHT), 2)
-        pg.draw.line(self.screen, BLACK, (WIDTH / 8 * 2, 0) , (WIDTH / 8 * 2, HEIGHT), 2)
-        pg.draw.line(self.screen, BLACK, (WIDTH / 8 * 3, 0) , (WIDTH / 8 * 3, HEIGHT), 2)
-        pg.draw.line(self.screen, BLACK, (WIDTH / 8 * 4, 0) , (WIDTH / 8 * 4, HEIGHT), 2)
-        pg.draw.line(self.screen, BLACK, (WIDTH / 8 * 5, 0) , (WIDTH / 8 * 5, HEIGHT), 2)
-        pg.draw.line(self.screen, BLACK, (WIDTH / 8 * 6, 0) , (WIDTH / 8 * 6, HEIGHT), 2)
-        pg.draw.line(self.screen, BLACK, (WIDTH / 8 * 7, 0) , (WIDTH / 8 * 7, HEIGHT), 2)
-
-
-
+        self.screen.blit(self.gameBackgound, self.gameBackgound_rect)
 
 
         # after drawing everything, flip the display
@@ -84,6 +78,7 @@ class Game:
         text_rect = text_surface.get_rect()
         text_rect.midtop = (x, y)
         self.screen.blit(text_surface, text_rect)
+
 
 
 g = Game()
