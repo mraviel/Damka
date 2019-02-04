@@ -16,9 +16,6 @@ class Game:
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         self.running = True
-        self.gameBackgound = pg.image.load(path.join(img_dir, 'background1.png')).convert()
-        self.gameBackgound = pg.transform.scale(self.gameBackgound, (900, 900))
-        self.gameBackgound_rect = self.gameBackgound.get_rect()
 
     def new(self):
         # start a new game
@@ -50,14 +47,10 @@ class Game:
                 self.mx, self.my = pg.mouse.get_pos()
                 print (self.mx, self.my)
 
-                if (0 < self.mx) and (self.mx < 165) and (0 < self.my) and (self.my < 115):
-                    print("GGODD")
-
 
     def draw(self):
         # Game loop - draw
         self.screen.fill((43,123,21))
-        self.screen.blit(self.gameBackgound, self.gameBackgound_rect)
 
 
         # after drawing everything, flip the display

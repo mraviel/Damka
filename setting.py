@@ -1,6 +1,6 @@
 # Game settings
 
-TITLE = "               Damka       "
+TITLE = "            Damka       "
 WIDTH = 900
 HEIGHT = 900
 FPS = 12
@@ -15,19 +15,23 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 
-block0 = [0, 0, 165, 115]
 
 """
-block0 = [0, 105, 135, 225]
-block1 = [108, 210, 135, 225]
-block2 = [215, 320, 135, 225]
+# x, x, y, y       ------>      not!: x, y, x, y
+block1 = [0, 112, 0, 111]
+block2 = [112, 224, 0, 111]
+block3 = [224, 336, 0, 111]
+block4 = [336, 450, 0, 111]
+block5 = [450, 562, 0, 111]
+block6 = [562, 672, 0, 111]
+block7 = [672, 787, 0, 111]
+block8 = [787, 900, 0, 111]
 
-block3 = [0, 105, 230, 320]
-block4 = [108, 210, 230, 320]
-block5 = [215, 315, 230, 315]
+block9 = [0, 112, 115, 222]
+block10 = [112, 223, 115, 224]
+block11 = [223, 336, 115, 224]
+block12 = [336, 448, 115, 224]
 
-block6 = [0, 105, 320, 400]
-block7 = [108, 210, 320, 400]
-block8 = [215, 320, 320, 400]
+DamkaBoard = [[block1, block2, block3, block4, block5, block6, block7, block8], [block9, block10, block11, block12]];
 
 """
