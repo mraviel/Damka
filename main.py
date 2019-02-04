@@ -1,5 +1,6 @@
 import pygame as pg
 from setting import *
+from board import Board
 import random
 from os import path
 
@@ -16,6 +17,7 @@ class Game:
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         self.running = True
+        board = Board()
 
     def new(self):
         # start a new game
