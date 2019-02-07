@@ -2,9 +2,6 @@
 
 class Squre():
 
-    def __init__(self):
+    def __init__(self, color):
 
-        self.squre = self.new_squre()
-
-    def new_squre(self):
-        pass
+        self.color = color  # the color of the squre (black or white)

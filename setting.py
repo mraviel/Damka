@@ -1,8 +1,8 @@
 # Game settings
 
 TITLE = "            Damka       "
-WIDTH = 900
-HEIGHT = 900
+WIDTH = 920
+HEIGHT = 920
 FPS = 12
 FONT_NAME = 'arial'
 

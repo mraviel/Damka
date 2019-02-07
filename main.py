@@ -17,7 +17,7 @@ class Game:
         pg.display.set_caption(TITLE)
         self.clock = pg.time.Clock()
         self.running = True
-        board = Board()
+        self.board = Board()
 
     def new(self):
         # start a new game
@@ -54,6 +54,19 @@ class Game:
         # Game loop - draw
         self.screen.fill((43,123,21))
 
+        self.board.drawBoardGame(self.screen, self.board);
+
+        """
+        pg.draw.rect(self.screen, BLACK, (WIDTH / 8 * 0, 0, WIDTH / 8, HEIGHT / 8), 1)
+        pg.draw.rect(self.screen, BLACK, (WIDTH / 8 * 1, 0, WIDTH / 8, HEIGHT / 8), 1)
+        pg.draw.rect(self.screen, BLACK, (WIDTH / 8 * 2, 0, WIDTH / 8, HEIGHT / 8), 1)
+        pg.draw.rect(self.screen, BLACK, (WIDTH / 8 * 3, 0, WIDTH / 8, HEIGHT / 8), 1)
+        pg.draw.rect(self.screen, BLACK, (WIDTH / 8 * 4, 0, WIDTH / 8, HEIGHT / 8), 1)
+        pg.draw.rect(self.screen, BLACK, (WIDTH / 8 * 5, 0, WIDTH / 8, HEIGHT / 8), 1)
+        pg.draw.rect(self.screen, BLACK, (WIDTH / 8 * 6, 0, WIDTH / 8, HEIGHT / 8), 1)
+        pg.draw.rect(self.screen, BLACK, (WIDTH / 8 * 7, 0, WIDTH / 8, HEIGHT / 8), 1)
+
+        """
 
         # after drawing everything, flip the display
         pg.display.flip()

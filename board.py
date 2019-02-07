@@ -1,4 +1,6 @@
-
+from squre import Squre
+from setting import *
+import pygame as pg
 
 class Board():
 
@@ -21,12 +23,22 @@ class Board():
         for y in range(8):
             for x in range(8):
                 if (x % 2 != 0) and (y % 2 == 0):
-                    board[y][x] = "White"
+                    board[y][x] = Squre(WHITE)
                 elif (x % 2 == 0) and (y % 2 != 0):
-                    board[y][x] = "Black"
+                    board[y][x] = Squre(WHITE)
                 elif (x % 2 != 0) and (y % 2 != 0):
-                    board[y][x] = "White"
+                    board[y][x] = Squre(BLACK)
                 elif (x % 2 == 0) and (y % 2 == 0):
-                    board[y][x] = "Black"
+                    board[y][x] = Squre(BLACK)
+
 
         print(board)
+
+        return board
+
+
+    def drawBoardGame(self, screen, board):
+
+        for y in range(8):
+            for x in range(8):
+                pg.draw.rect(screen, self.board[x][y].color, (WIDTH / 8 * x, HEIGHT / 8 * y, WIDTH / 8, HEIGHT / 8), 0)
